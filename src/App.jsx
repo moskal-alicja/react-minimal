@@ -1,7 +1,7 @@
 import React from 'react'
 
-const App = () => (
+const MyApp = () => (
   <h1>Minimal React</h1>  
 )
 
-export default App
+export default MyApp

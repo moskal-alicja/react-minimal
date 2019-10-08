@@ -1,7 +1,7 @@
 {
   "name": "react-minimal",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "main.js",
   "license": "MIT",
   "scripts": {
     "start": "webpack-dev-server --config webpack.config.dev.js --open",
