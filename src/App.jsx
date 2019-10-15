@@ -1,6 +1,8 @@
 import React from 'react'
 import AppTitle from './AppTitle'
 import Students from './Students'
+import InputFields from './DynamicArray'
+
 
 const MyApp = () => (
   <div>
@@ -12,6 +14,10 @@ const MyApp = () => (
   <div>Elements from [{MyArray.toString()}] to their square root: [{squareRootFromMyArray.call().toString()}]</div>
   <p>JSON data: </p>
   <Students />
+
+  <h3>LAB 2</h3>
+  <InputFields />
+
   </div>
 )
 
