@@ -11,7 +11,7 @@ const MyApp = () => (
     <div>generateArray with n = 10: {generateArray(10).toString()}</div>
     <div>generateRandomArray with n = 10: {generateRandomArray(10).toString()}</div>
     <div>Elements from [{constArray.toString()}] larger than 15: {constArray.filter(x => x > 15).toString()}</div>
-    <div>Elements from [{MyArray.toString()}] to their square root: [{squareRootFromMyArray.call().toString()}]</div>
+    <div>Elements from [{MyArray.toString()}] to their square root: [{squareRootFromMyArray().toString()}]</div>
     <p>JSON data: </p>
     <Students />
     <div className="lab2">
@@ -30,6 +30,6 @@ const constArray = [2, 56, 23, 88, 17, 4]
 
 const MyArray = [2, 5, 8, 10]
 
-const squareRootFromMyArray = () => Array.from(MyArray, (x) => Math.sqrt(x))
+const squareRootFromMyArray = () => MyArray.map(x => Math.sqrt(x))
 
 export default MyApp
