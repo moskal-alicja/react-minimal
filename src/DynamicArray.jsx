@@ -10,7 +10,10 @@ class DynamicArray extends React.Component {
             array: []
         }
 
-        this.inputChanged = this.inputChanged.bind(this);     
+        this.inputChanged = this.inputChanged.bind(this);  
+        
+        this.renderCounter = 1;
+        console.time(`render - ${this.renderCounter} `);
     }
 
     generateArray = (a, b) => Array(b - a + 1).fill().map((x,i) => a + i)
@@ -36,6 +39,7 @@ class DynamicArray extends React.Component {
     } 
 
     render() {
+        
         return(
             <div className="dynamicArray">
                 <div className="inputFields">
@@ -44,13 +48,26 @@ class DynamicArray extends React.Component {
                 </div>
                 { this.state.array.length > 0 &&
                 <p>
-                    Generated array: 
-                    {this.state.array.toString()}
+                    Generated array: {this.state.array.toString()}
                 </p>
-                }
-            </div>           
+                }                  
+            </div>                   
         );
-    }  
+    }
+    
+    componentDidMount() {
+        console.timeEnd(`render - ${this.renderCounter} `);
+    }
+
+    shouldComponentUpdate() {
+        this.renderCounter++;
+        console.time(`render - ${this.renderCounter} `);
+        return true;
+    }
+
+    componentDidUpdate() {
+        console.timeEnd(`render - ${this.renderCounter} `);
+    }
 }
 
 export default DynamicArray
